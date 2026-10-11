@@ -1,1 +1,43 @@
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Durrant Diamond Dash</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header id="hd"><svg viewBox="0 0 960 110" role="img" aria-label="Durrant Diamond Dash">
+<defs>
+<linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#070b24"/><stop offset=".55" stop-color="#2b2a8c"/><stop offset="1" stop-color="#22d3ee"/></linearGradient>
+<linearGradient id="dia" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset=".5" stop-color="#a5f3fc"/><stop offset="1" stop-color="#38bdf8"/></linearGradient>
+<radialGradient id="sun"><stop offset="0" stop-color="#e0fbff"/><stop offset="1" stop-color="#38bdf8" stop-opacity="0"/></radialGradient>
+<filter id="sh" x="-10%" y="-20%" width="120%" height="150%"><feDropShadow dx="0" dy="3" stdDeviation="2" flood-color="#000" flood-opacity=".6"/></filter>
+<symbol id="star" viewBox="-10 -10 20 20"><path d="M0-10L2.5-2.5L10 0L2.5 2.5L0 10L-2.5 2.5L-10 0L-2.5-2.5Z"/></symbol>
+</defs>
+<rect width="960" height="110" fill="url(#sky)"/>
+<circle cx="480" cy="112" r="100" fill="url(#sun)"/>
+<polygon points="0,110 0,70 60,38 120,70 190,28 270,76 330,56 390,90 430,110" fill="#1b2a6b"/>
+<polygon points="960,110 960,70 900,38 840,70 770,28 690,76 630,56 570,90 530,110" fill="#1b2a6b"/>
+<polygon points="0,110 0,92 80,66 160,96 250,84 330,110" fill="#0c1648"/>
+<polygon points="960,110 960,92 880,66 800,96 710,84 630,110" fill="#0c1648"/>
+<g transform="translate(100,54)"><g class="coin"><polygon points="-34,-8 -18,-26 18,-26 34,-8 0,34" fill="url(#dia)" stroke="#0e5a8a" stroke-width="3" stroke-linejoin="round"/><polygon points="-18,-26 -8,-8 -34,-8" fill="#fff" fill-opacity=".6"/><polygon points="18,-26 8,-8 34,-8" fill="#38bdf8" fill-opacity=".45"/><polygon points="-8,-8 8,-8 0,34" fill="#0ea5e9" fill-opacity=".35"/><polyline points="-34,-8 34,-8" fill="none" stroke="#0e5a8a" stroke-width="1.5"/><polyline points="-18,-26 -8,-8 0,34 8,-8 18,-26" fill="none" stroke="#0e5a8a" stroke-width="1.5" stroke-linejoin="round"/></g></g>
+<g transform="translate(860,54)"><g class="coin" style="animation-delay:1.6s"><polygon points="-34,-8 -18,-26 18,-26 34,-8 0,34" fill="url(#dia)" stroke="#0e5a8a" stroke-width="3" stroke-linejoin="round"/><polygon points="-18,-26 -8,-8 -34,-8" fill="#fff" fill-opacity=".6"/><polygon points="18,-26 8,-8 34,-8" fill="#38bdf8" fill-opacity=".45"/><polygon points="-8,-8 8,-8 0,34" fill="#0ea5e9" fill-opacity=".35"/><polyline points="-34,-8 34,-8" fill="none" stroke="#0e5a8a" stroke-width="1.5"/><polyline points="-18,-26 -8,-8 0,34 8,-8 18,-26" fill="none" stroke="#0e5a8a" stroke-width="1.5" stroke-linejoin="round"/></g></g>
+<use href="#star" class="tw" x="170" y="14" width="14" height="14" fill="#e0fbff"/>
+<use href="#star" class="tw" x="230" y="60" width="10" height="10" fill="#7dd3fc" style="animation-delay:.6s"/>
+<use href="#star" class="tw" x="300" y="10" width="12" height="12" fill="#e0fbff" style="animation-delay:1.2s"/>
+<use href="#star" class="tw" x="655" y="12" width="12" height="12" fill="#e0fbff" style="animation-delay:.3s"/>
+<use href="#star" class="tw" x="730" y="58" width="10" height="10" fill="#7dd3fc" style="animation-delay:.9s"/>
+<use href="#star" class="tw" x="790" y="14" width="14" height="14" fill="#e0fbff" style="animation-delay:1.5s"/>
+<text x="480" y="66" text-anchor="middle" font-size="44" font-weight="900" textLength="640" lengthAdjust="spacingAndGlyphs" fill="url(#dia)" stroke="#0b3a66" stroke-width="2" paint-order="stroke" filter="url(#sh)" style="font-family:'Cinzel','Trajan Pro',Georgia,serif">DURRANT DIAMOND DASH</text>
+<text x="480" y="94" text-anchor="middle" font-size="14" fill="#bdf2ff" style="font-family:system-ui,sans-serif;letter-spacing:7px">A PLATFORMER ADVENTURE</text>
+</svg></header>
+<div id="modal" hidden><div class="box"><h2 id="mt"></h2><p id="mp"></p><input id="nm" maxlength="12" placeholder="Your name" hidden><ol id="hs" hidden></ol><div id="pl" hidden></div><div id="cs" hidden><button data-c="boy">Boy</button><button data-c="girl">Girl</button></div><button id="mb"></button><button id="pb" hidden>Back</button><button id="pc" hidden>Cancel</button></div></div>
+<div id="menu"><select id="lvl" aria-label="Level"></select><button id="rs">Restart</button><button id="hsb">Scores</button><button id="swb">Player</button></div>
+<canvas id="c" width="640" height="352"></canvas>
+<div id="pad"><button id="bl">◀</button><button id="br">▶</button><button id="bj">Jump</button><button id="bc">▼</button><button id="bf">Fire</button></div>
+<p>Left/Right (A/D) move, Up (W) jump, Down (S) crouch, Space throws a gold dagger. Land on ? boxes for random power-ups, grab diamonds and hearts, reach the flag.</p>
+<script src="game.js"></script>
+</body>
+</html>
